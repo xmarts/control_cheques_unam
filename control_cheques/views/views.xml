@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+
+    <menuitem 
+    id="menu_root_cheques"  
+    name="Control de Cheques" 
+    sequence="30"/>
+
+    <menuitem 
+    id="sub_menu_root_cheques" 
+    name="Configuración" 
+    parent="menu_root_cheques"/>
+    
+    <record model="ir.actions.act_window" id="listar_min_cheques">
+      <field name="name">Mínimo de cheques</field>
+      <field name="res_model">checks.reorder.point</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_minimo_cheques" 
+    name="​ Mínimo de cheques"
+    parent="control_cheques.sub_menu_root_cheques"
+    action="listar_min_cheques" 
+    sequence="99"/>
+
+    <record model="ir.ui.view" id="cheques_tree" >
+      <field name="name">cheques_cheques.tree</field>
+      <field name="model">checks.reorder.point</field>
+      <field name="arch" type="xml">
+        <tree string="Idea list">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record> 
+
+    <record model="ir.ui.view" id="view_cheques_form">
+      <field name="name">view.cheques.form</field>
+      <field name="model">checks.reorder.point</field>
+      <field name="arch" type="xml">
+        <form string="nombre form">
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="bank_account_id"/>
+              </group>
+              <group>
+                <field name="bank_id"/>
+                <field name="minimum_of_chek"/>
+                <field name="reorder_point"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+ 
+  </data>
+</odoo>

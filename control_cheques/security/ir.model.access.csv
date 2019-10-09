@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_checks_reorder_point,checks.reorder.point,model_checks_reorder_point,,1,1,1,1
+access_reason_for_cancellation,reason.for.cancellation,model_reason_for_cancellation,,1,1,1,1
+access_checks_checkbook,checks.checkbook,model_checks_checkbook,,1,1,1,1
